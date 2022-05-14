@@ -3,3 +3,5 @@ CREATE TABLE `db_212praktek6a`.`pengguna` ( `id` INT NOT NULL AUTO_INCREMENT , `
 INSERT INTO `pengguna` (`id`, `username`, `password`, `namaLengkap`, `level`) VALUES
 (NULL, 'admin', MD5('admin123'), 'Saya Admin', 'admin'),
 (NULL, 'user1', MD5('user1'), 'Saya User 1', 'user');
+
+ https://dev.mysql.com/downloads/connector/j/
