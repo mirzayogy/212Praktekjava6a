@@ -99,7 +99,21 @@ public class Pengguna {
             System.err.println("Error Update Data");
         }
     }
-    public void delete(){}
+    public void delete(){
+        String deleteSQL = "DELETE FROM `pengguna` WHERE `pengguna`.`id` = ?";
+
+        MyConnection m = new MyConnection();
+        this.connection = m.getConnection();
+        try {
+            PreparedStatement preparedStatement = this.connection.prepareStatement(deleteSQL);
+            preparedStatement.setInt(1, this.id);
+            preparedStatement.execute();
+
+            System.out.println("Berhasil Hapus Data");
+        } catch (SQLException e) {
+            System.err.println("Error Hapus Data");
+        }
+    }
 
     public void login(){}
     public void updatePassword(){}

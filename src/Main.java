@@ -18,11 +18,12 @@ public class Main {
 //        Pengguna coba = new Pengguna(4,"user3","user3","User Tiga","user");
         Pengguna coba = new Pengguna();
         coba.setId(6);
-        coba.setUsername("user6");
-        coba.setPassword("user6");
-        coba.setNamaLengkap("User Enam");
-        coba.setLevel("user");
+//        coba.setUsername("user6");
+//        coba.setPassword("user6");
+//        coba.setNamaLengkap("User Enam");
+//        coba.setLevel("user");
 //        coba.create();
-        coba.update();
+//        coba.update();
+        coba.delete();
     }
 }
