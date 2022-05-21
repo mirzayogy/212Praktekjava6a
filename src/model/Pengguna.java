@@ -115,7 +115,32 @@ public class Pengguna {
         }
     }
 
-    public void login(){}
+    public boolean login(){
+        boolean hasil;
+        MyConnection m = new MyConnection();
+        this.connection = m.getConnection();
+
+        ArrayList<Pengguna> listPengguna = new ArrayList<>();
+
+        String loginSQL = "SELECT * FROM pengguna WHERE username=? AND password = MD5(?)";
+
+        try {
+
+            PreparedStatement preparedStatement = this.connection.prepareStatement(loginSQL);
+            preparedStatement.setString(1, this.username);
+            preparedStatement.setString(2, this.password);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            hasil = false;
+            while (resultSet.next()){
+               hasil = true;
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return hasil;
+    }
     public void updatePassword(){}
     public void resetPassword(){}
 

@@ -25,5 +25,14 @@ public class Main {
 //        coba.create();
 //        coba.update();
         coba.delete();
+
+        Pengguna mauLogin = new Pengguna();
+        mauLogin.setUsername("user1");
+        mauLogin.setPassword("user1");
+        if(mauLogin.login()){
+            System.out.println("Login Berhasil");
+        } else {
+            System.err.println("Gagal Login");
+        }
     }
 }
