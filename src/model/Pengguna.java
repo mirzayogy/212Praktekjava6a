@@ -80,7 +80,25 @@ public class Pengguna {
         }
         return listPengguna;
     }
-    public void update(){}
+    public void update(){
+        String updateSQL = "UPDATE `pengguna` SET `username` = ?, `password` = MD5(?), `namaLengkap` = ?, `level` = ? WHERE `pengguna`.`id` = ?";
+
+        MyConnection m = new MyConnection();
+        this.connection = m.getConnection();
+        try {
+            PreparedStatement preparedStatement = this.connection.prepareStatement(updateSQL);
+            preparedStatement.setString(1, this.username);
+            preparedStatement.setString(2, this.password);
+            preparedStatement.setString(3, this.namaLengkap);
+            preparedStatement.setString(4, this.level);
+            preparedStatement.setInt(5, this.id);
+            preparedStatement.execute();
+
+            System.out.println("Berhasil Update Data");
+        } catch (SQLException e) {
+            System.err.println("Error Update Data");
+        }
+    }
     public void delete(){}
 
     public void login(){}
