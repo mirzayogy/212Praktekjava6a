@@ -27,12 +27,22 @@ public class Main {
         coba.delete();
 
         Pengguna mauLogin = new Pengguna();
-        mauLogin.setUsername("user1");
-        mauLogin.setPassword("user1");
+        mauLogin.setUsername("user2");
+        mauLogin.setPassword("inipaswordbaru");
         if(mauLogin.login()){
             System.out.println("Login Berhasil");
         } else {
             System.err.println("Gagal Login");
+        }
+
+        Pengguna gantiPassword = new Pengguna();
+        gantiPassword.setUsername("user2");
+        gantiPassword.setPassword("user2");
+
+        if(gantiPassword.updatePassword("inipaswordbaru")){
+            System.out.println("Update password berhasil");
+        } else {
+            System.err.println("Gagal update password");
         }
     }
 }
