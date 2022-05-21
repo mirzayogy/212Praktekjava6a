@@ -14,5 +14,13 @@ public class Main {
         for (Pengguna value: listPengguna){
             System.out.println(value.getNamaLengkap());
         }
+
+//        Pengguna coba = new Pengguna(4,"user3","user3","User Tiga","user");
+        Pengguna coba = new Pengguna();
+        coba.setUsername("user4");
+        coba.setPassword("user4");
+        coba.setNamaLengkap("User Empat");
+        coba.setLevel("user");
+        coba.create();
     }
 }
