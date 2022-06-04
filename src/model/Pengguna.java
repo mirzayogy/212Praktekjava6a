@@ -115,6 +115,28 @@ public class Pengguna {
         }
     }
 
+    public void find(){
+        MyConnection m = new MyConnection();
+        this.connection = m.getConnection();
+
+        String findSQL = "SELECT * FROM pengguna WHERE id = ?";
+
+        try {
+
+            PreparedStatement preparedStatement = this.connection.prepareStatement(findSQL);
+            preparedStatement.setInt(1, this.id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+                this.setUsername(resultSet.getString("username"));
+                this.setNamaLengkap(resultSet.getString("namalengkap"));
+                this.setLevel(resultSet.getString("level"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public boolean login(){
         boolean hasil;
         MyConnection m = new MyConnection();

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="frame.PenggunaViewForm">
+  <grid id="27dc6" binding="panelMain" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="16" bottom="0" right="16"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="e6d91" binding="panelJudul" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="53a0d" class="javax.swing.JLabel">
+            <constraints/>
+            <properties>
+              <font size="18" style="1"/>
+              <text value="Data Pengguna"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <vspacer id="91c58">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <grid id="b64dd" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="5e11" class="javax.swing.JLabel">
+            <constraints border-constraint="West"/>
+            <properties>
+              <text value="Cari Username"/>
+            </properties>
+          </component>
+          <component id="8d57a" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+            <constraints border-constraint="Center"/>
+            <properties/>
+          </component>
+          <component id="23ca0" class="javax.swing.JButton" binding="cariButton" default-binding="true">
+            <constraints border-constraint="East"/>
+            <properties>
+              <text value="Cari"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <scrollpane id="4ce49" binding="scrollPane1">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="33f01" class="javax.swing.JTable" binding="tablePengguna" custom-create="true">
+            <constraints/>
+            <properties/>
+          </component>
+        </children>
+      </scrollpane>
+      <grid id="d65be" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="bf1e0" class="javax.swing.JButton" binding="tambahButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="Tambah"/>
+            </properties>
+          </component>
+          <component id="9c003" class="javax.swing.JButton" binding="ubahButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="Ubah"/>
+            </properties>
+          </component>
+          <component id="9eff6" class="javax.swing.JButton" binding="hapusButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="Hapus"/>
+            </properties>
+          </component>
+          <component id="7f84c" class="javax.swing.JButton" binding="batalButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="Batal"/>
+            </properties>
+          </component>
+          <component id="4092d" class="javax.swing.JButton" binding="tutupButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="Tutup"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

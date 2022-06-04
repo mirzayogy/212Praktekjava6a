@@ -13,6 +13,7 @@ public class PenggunaCreateForm extends JFrame{
     private JButton batalButton;
     public JPanel panelMain;
 
+
     public PenggunaCreateForm() {
         simpanButton.addActionListener(e -> {
             Pengguna p = new Pengguna();
@@ -28,9 +29,41 @@ public class PenggunaCreateForm extends JFrame{
             tfLevel.setText("");
 
             JOptionPane.showMessageDialog(null, "Simpan data berhasil");
+            dispose();
         });
         batalButton.addActionListener(e -> {
-            System.exit(0);
+            dispose();
         });
     }
+
+    public PenggunaCreateForm(int id) {
+        Pengguna p = new Pengguna();
+        p.setId(id);
+        p.find();
+        tfUsername.setText(p.getUsername());
+        tfNamaLengkap.setText(p.getNamaLengkap());
+        tfLevel.setText(p.getLevel());
+
+        simpanButton.addActionListener(e -> {
+            Pengguna pSimpan = new Pengguna();
+            pSimpan.setId(id);
+            pSimpan.setUsername(tfUsername.getText());
+            pSimpan.setPassword(tfPassword.getPassword().toString());
+            pSimpan.setNamaLengkap(tfNamaLengkap.getText());
+            pSimpan.setLevel(tfLevel.getText());
+            pSimpan.update();
+
+            tfUsername.setText("");
+            tfPassword.setText("");
+            tfNamaLengkap.setText("");
+            tfLevel.setText("");
+
+            JOptionPane.showMessageDialog(null, "Ubah data berhasil");
+            dispose();
+        });
+        batalButton.addActionListener(e -> {
+            dispose();
+        });
+    }
+
 }
